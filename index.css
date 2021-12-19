@@ -1,0 +1,60 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.text-center{
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+header {
+	margin: 2rem;
+}
+
+button {
+	padding: 0.5rem;
+}
+
+.main-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+.game-container {
+	display: none;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+	.start-game {
+		width: 6rem;
+	}
+
+	.player-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+	}
+
+		.player{
+			padding: 0 1rem;
+			margin: 1rem;
+		}
+
+	.end-score {
+		display: block;
+		margin: 1rem;
+	}
+
+	.match-result {
+		display: none;
+	}
