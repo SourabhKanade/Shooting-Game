@@ -10,6 +10,20 @@
 	display: none;
 }
 
+.shot1 {
+	border-radius: 19rem 50rem 50rem 19rem;
+	width: 6rem;
+}
+
+.shot2 {
+	border-radius: 81rem 1rem 1rem 80rem;
+	width: 6rem;
+}
+
+/* .winner{
+	margin-top: 10rem;
+} */
+
 header {
 	margin: 2rem;
 }

@@ -2,6 +2,8 @@
 
 const game = document.querySelector('#game');
 let startGame = document.getElementById('start_game');
+// const p1Greetings = document.getElementById('player1_won');
+// const p2Greetings = document.getElementById('player2_won');
 const p1Btn = document.querySelector('#p1Btn');
 const p2Btn = document.querySelector('#p2Btn');
 let p1Score = document.querySelector('#p1Score');
@@ -13,8 +15,8 @@ let winner = document.querySelector('.winner');
 
 p1Health.innerText = 100;
 p2Health.innerText = 100;
-p1Score = 0;
-p2Score = 0;
+p1Score.innerText = 0;
+p2Score.innerText = 0;
 
 // console.log(p1Health.innerText, p2Health.innerText)
 
@@ -33,16 +35,14 @@ const reset = () => {
 		enableButton(p1Btn);
     }else{
         if(gameData['player1Score'] > gameData['player2Score']){
-            hide(game);
             disableButton(p1Btn);
             disableButton(p2Btn);
-            winner.innerText = 'Player1 Has Won The Game!'
+            winner.innerText = 'Player1 won the match!'
             show(matchResult);
-        } else{
-            hide(game);
+        }else{
             disableButton(p1Btn);
             disableButton(p2Btn);
-            winner.innerText = 'Player2 Has Won The Game!'
+            winner.innerText = 'Player1 won the match!'
             show(matchResult);
         }
     }
@@ -50,20 +50,25 @@ const reset = () => {
 
 const result = (p1Health, p2Health) => {
     if(p1Health.innerText > p2Health.innerText){
-        gameData['player1Score'] += 1;
-        p1Score.innerText = gameData['player1Score'];
+       let latestscorep1 = gameData['player1Score'] += 1;
+        p1Score.innerText = latestscorep1;
         p2Score.innerText = gameData['player2Score'];
+        console.log('player 1 WON!');       
+        
     }else{
-        gameData['player2Score'] += 1;
+       let latestscorep2 = gameData['player2Score'] += 1;
         p1Score.innerText = gameData['player1Score'];
-        p2Score.innerText = gameData['player2Score'];
+        p2Score.innerText = latestscorep2;
+        console.log('player 2 WON!');
     }
     disableButton(p1Btn);
     disableButton(p2Btn);
+  
     setTimeout(() => {
         reset();
     }, 2000);
 }
+
 const show = (el) => {
     el.style.display = 'flex';
 }
@@ -105,6 +110,8 @@ p1Btn.addEventListener("click", function (e)  {
     }else{
         result(p1Health, p2Health);
     }
+    // hide(p1Greetings);
+    // hide(p2Greetings);
 });
 
 p2Btn.addEventListener('click', (e) => {

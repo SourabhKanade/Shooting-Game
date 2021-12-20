@@ -15,33 +15,38 @@
   <main class="main-container">
     <button class="start-game" id="start_game">Start Game</button>
     <section class="game-container" id="game">
-      <!-- <h2>Game Started</h2> -->  
       <section class="player-container">
         <article class="player">
           <div>Player 1</div>
-          <div>Total Health: 100</div>
+          <br>
           <div>Health Remaining: <span id="p1Health"></span></div>
-          <button id="p1Btn" disabled>Shoot</button>
+          <br>
+          <button class="shot1" id="p1Btn" disabled>Shoot</button>
         </article>
   
         <article class="player">
           <div>Player 2</div>
-          <div>Total Health: 100</div>
+          <br>
           <div>Health Remaining: <span id="p2Health"></span></div>
-          <button id="p2Btn" disabled>Shoot</button>
+          <br>
+          <button class="shot2" id="p2Btn" disabled>Shoot</button>
         </article>
       </section>
       
       <article class="end-score">
         <h2>Score</h2>
         <hr>
-        <div>Player 1: Won <span id="p1Score"></span></div>
-        <div>Player 2: Won <span id="p2Score"></span></div>
+        <div>Player 1 - Won : <span id="p1Score"></span></div>
+        <div>Player 2 - Won : <span id="p2Score"></span></div>
+        <br>
+        <div class="match-result">
+          <h1 class='winner'></h1>
+        </div>
+      </article>
+      <article class="match-result">
+        <h2 class='winner'></h2>
       </article>
     </section>
-    <article class="match-result">
-      <h2 class='winner'></h2>
-    </article>
   </main>
   <script src="index.js"></script>
 </body>
